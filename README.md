@@ -5,8 +5,8 @@
 <p align="center">
   <a href="https://github.com/reddpy/AgentGhost/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/reddpy/AgentGhost/actions/workflows/ci.yml/badge.svg"></a>
   <a href="https://www.npmjs.com/package/@agentghost/sdk"><img alt="npm" src="https://img.shields.io/npm/v/@agentghost/sdk.svg"></a>
-  <a href="./LICENSE"><img alt="license" src="https://img.shields.io/npm/l/@agentghost/sdk.svg"></a>
-  <img alt="node" src="https://img.shields.io/node/v/@agentghost/sdk.svg">
+  <a href="./LICENSE"><img alt="license" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+  <img alt="node" src="https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg">
 </p>
 
 # AgentGhost
