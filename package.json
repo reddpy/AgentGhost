@@ -1,0 +1,46 @@
+{
+  "name": "agentghost",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.3.11",
+  "author": "AgentGhost contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reddpy/agentghost.git"
+  },
+  "homepage": "https://github.com/reddpy/agentghost#readme",
+  "bugs": {
+    "url": "https://github.com/reddpy/agentghost/issues"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "tsc -b && bun run --filter '*' build:cjs",
+    "typecheck": "tsc -b",
+    "clean": "tsc -b --clean && rm -rf packages/*/dist",
+    "test": "bun test",
+    "test:live": "AGENTGHOST_LIVE=1 bun test packages/sdk/test/gateway.live.test.ts",
+    "example:basic": "bun run examples/basic.ts",
+    "example:vercel": "bun run examples/vercel.ts",
+    "example:langchain": "bun run examples/langchain.ts",
+    "example:openai": "bun run examples/openai.ts",
+    "example:real:vercel": "bun run examples/real/vercel.ts",
+    "example:real:langchain": "bun run examples/real/langchain.ts",
+    "example:real:openai": "bun run examples/real/openai.ts"
+  },
+  "devDependencies": {
+    "@agentghost/langchain": "workspace:*",
+    "@agentghost/openai": "workspace:*",
+    "@agentghost/sdk": "workspace:*",
+    "@agentghost/vercel": "workspace:*",
+    "@langchain/core": "^1.2.11",
+    "@langchain/openai": "^1.5.13",
+    "@types/node": "^22.10.0",
+    "ai": "^7.0.106",
+    "langchain": "^1.5.11",
+    "openai": "^7.19.0",
+    "typescript": "^5.7.2",
+    "zod": "^4.6.5"
+  }
+}

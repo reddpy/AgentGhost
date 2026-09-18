@@ -1,0 +1,60 @@
+{
+  "name": "@agentghost/openai",
+  "version": "0.1.0",
+  "description": "AgentGhost guard for OpenAI and Anthropic function/tool calling. Wrap the tool dispatcher with intent-aware ALLOW / ASK / DENY authorization.",
+  "type": "module",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "AgentGhost contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reddpy/agentghost.git",
+    "directory": "packages/openai"
+  },
+  "homepage": "https://github.com/reddpy/agentghost#readme",
+  "bugs": {
+    "url": "https://github.com/reddpy/agentghost/issues"
+  },
+  "sideEffects": false,
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json && node ../../scripts/write-cjs-package.mjs",
+    "typecheck": "tsc -p tsconfig.json",
+    "prepublishOnly": "bun run build && bun run build:cjs"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "tools",
+    "authorization",
+    "guard",
+    "openai",
+    "anthropic"
+  ],
+  "dependencies": {
+    "@agentghost/sdk": "workspace:*"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "name": "@agentghost/sdk",
+  "version": "0.1.0",
+  "description": "Intent-aware authorization middleware for AI agent tools. Wraps tool execution in an ALLOW / ASK / DENY check powered by Jev.",
+  "type": "module",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "AgentGhost contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reddpy/agentghost.git",
+    "directory": "packages/sdk"
+  },
+  "homepage": "https://github.com/reddpy/agentghost#readme",
+  "bugs": {
+    "url": "https://github.com/reddpy/agentghost/issues"
+  },
+  "sideEffects": false,
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json && node ../../scripts/write-cjs-package.mjs",
+    "typecheck": "tsc -p tsconfig.json",
+    "prepublishOnly": "bun run build && bun run build:cjs"
+  },
+  "peerDependencies": {
+    "ai": ">=7.0.105"
+  },
+  "peerDependenciesMeta": {
+    "ai": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "tools",
+    "authorization",
+    "guard",
+    "jev",
+    "typesafe",
+    "middleware"
+  ]
+}
