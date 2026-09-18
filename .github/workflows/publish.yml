@@ -29,7 +29,13 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           for pkg in sdk vercel langchain openai; do
-            echo "::group::Publishing @agentghost/$pkg"
-            ( cd "packages/$pkg" && npm publish --access public --provenance )
+            name="@agentghost/$pkg"
+            version=$(node -p "require('./packages/$pkg/package.json').version")
+            echo "::group::$name@$version"
+            if npm view "$name@$version" version >/dev/null 2>&1; then
+              echo "$name@$version is already published; skipping."
+            else
+              ( cd "packages/$pkg" && npm publish --access public --provenance )
+            fi
             echo "::endgroup::"
           done

@@ -1,6 +1,6 @@
 {
   "name": "@agentghost/vercel",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "AgentGhost guard for the Vercel AI SDK. Wrap AI SDK tools with intent-aware ALLOW / ASK / DENY authorization.",
   "type": "module",
   "license": "MIT",
@@ -55,7 +55,7 @@
     "ai-sdk"
   ],
   "dependencies": {
-    "@agentghost/sdk": "workspace:*"
+    "@agentghost/sdk": "^0.1.1"
   },
   "peerDependencies": {
     "ai": ">=4.0.0"

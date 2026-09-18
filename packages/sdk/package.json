@@ -1,6 +1,6 @@
 {
   "name": "@agentghost/sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Intent-aware authorization middleware for AI agent tools. Wraps tool execution in an ALLOW / ASK / DENY check powered by Jev.",
   "type": "module",
   "license": "MIT",

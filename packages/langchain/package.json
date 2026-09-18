@@ -1,6 +1,6 @@
 {
   "name": "@agentghost/langchain",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "AgentGhost guard for LangChain.js tools. Wrap tool execution with intent-aware ALLOW / ASK / DENY authorization.",
   "type": "module",
   "license": "MIT",
@@ -54,7 +54,7 @@
     "langchain"
   ],
   "dependencies": {
-    "@agentghost/sdk": "workspace:*"
+    "@agentghost/sdk": "^0.1.1"
   },
   "peerDependencies": {
     "@langchain/core": ">=0.3.0"
