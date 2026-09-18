@@ -28,6 +28,13 @@ export AI_GATEWAY_API_KEY=...        # Jev via Vercel AI Gateway
 export TYPESAFE_API_KEY=...          # Jev direct API
 ```
 
+## Requirements
+
+- **Node.js 20+** (ESM and CommonJS, with TypeScript types).
+- A judge key as above (the Gateway path needs the optional `ai` peer at AI SDK
+  7.0.105+; the direct path uses `fetch`), or your own `Judge`.
+- No runtime dependencies.
+
 ## Usage
 
 ```ts

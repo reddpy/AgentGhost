@@ -32,39 +32,62 @@ npm install @agentghost/langchain          # LangChain.js
 npm install @agentghost/openai             # OpenAI / Anthropic tool calling
 ```
 
-Set a judge key (Jev via Vercel AI Gateway). AgentGhost reads it automatically:
+Set a judge key — AgentGhost reads it automatically:
 
 ```bash
-export AI_GATEWAY_API_KEY=...
+export AI_GATEWAY_API_KEY=...   # Jev via Vercel AI Gateway
+# or
+export TYPESAFE_API_KEY=...     # Jev direct (no `ai` package needed)
 ```
+
+## Requirements
+
+- **Node.js 20+**. Ships ESM and CommonJS with TypeScript types.
+- **A judge** — one of: `AI_GATEWAY_API_KEY` (Jev via Vercel AI Gateway, needs
+  the optional `ai` peer at AI SDK 7.0.105+), `TYPESAFE_API_KEY` (Jev direct,
+  uses `fetch`), or your own `Judge`.
+- `@agentghost/sdk` has **no runtime dependencies**. `ai` and the framework SDKs
+  are optional peers you already use.
 
 ## Quickstart
 
+AgentGhost is framework-agnostic: the same `guard()` wraps tools from any agent
+framework. Here it is with the Vercel AI SDK:
+
 ```ts
-import { guard } from "@agentghost/vercel";
+import { generateText } from "ai";            // Vercel AI SDK
+import { guard } from "@agentghost/vercel";   // AgentGhost
 
 const safeTools = guard(tools, { intent: () => currentTask });
 
 const result = await generateText({ model, tools: safeTools, prompt });
 ```
 
-That is the whole integration. `guard()` returns the same tools with each
-`execute` wrapped, so they drop into your agent unchanged. `intent` is a function
-because the user's task changes during a conversation.
+`guard()` returns the same tools with each execution wrapped, so they drop into
+your agent unchanged. `intent` is a function because the user's task changes
+during a conversation. (`generateText`, `model`, `prompt`, and `currentTask` are
+yours — AgentGhost only supplies `guard` and `safeTools`.)
 
-LangChain and OpenAI follow the same shape:
+The same two lines work for other frameworks:
 
 ```ts
+import { createAgent } from "langchain";       // LangChain.js
 import { guard } from "@agentghost/langchain";
+
 const safeTools = guard(tools, { intent: () => currentTask });
 const agent = createAgent({ model, tools: safeTools });
 ```
 
 ```ts
 import { guardOpenAI } from "@agentghost/openai";
+
+// executeTool is your own (name, args) => result function.
 const run = guardOpenAI(executeTool, { tools, intent: () => currentTask });
 // call run(name, args) instead of switching on the tool name
 ```
+
+Need another framework? An adapter is about ten lines with `defineGuard`, and an
+MCP proxy is on the roadmap.
 
 ## How it works
 
@@ -165,8 +188,11 @@ import { createJevJudge, createJevJudgeFromEvaluate, createGatewayJudge } from "
 
 ## Switching the judge
 
-AgentGhost talks to Jev behind a small `Judge` interface, so changing providers is a
-config swap, not a rewrite.
+AgentGhost talks to Jev behind a small `Judge` interface, so changing providers
+is a config swap, not a rewrite. Jev is reachable through a growing set of
+gateways: the Vercel AI Gateway and the TypeSafe direct API work today, and more
+gateways and first-class access paths are planned. Anything that serves Jev — or
+a different decision model entirely — plugs in the same way.
 
 - **Vercel AI Gateway (default):** set `AI_GATEWAY_API_KEY`.
 - **Direct Jev API key:** set `TYPESAFE_API_KEY`. No `ai` package needed — the
