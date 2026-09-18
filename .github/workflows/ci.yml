@@ -19,3 +19,5 @@ jobs:
         run: bun run build
       - name: Test
         run: bun test
+      - name: Check packages
+        run: bun run check:package

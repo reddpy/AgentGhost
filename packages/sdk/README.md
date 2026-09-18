@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/reddpy/agentghost/main/docs/agentghost_icon.png" alt="AgentGhost" width="76">
+  <img src="https://raw.githubusercontent.com/reddpy/AgentGhost/main/docs/agentghost_icon.png" alt="AgentGhost" width="76">
 </p>
 
 # @agentghost/sdk
@@ -99,4 +99,4 @@ guard(tools, {
 Missing config fails fast: `guard()` throws `AgentGhostConfigError` if there is
 no judge, no key, and no `judge: null`.
 
-See the [full documentation](https://github.com/reddpy/agentghost#readme).
+See the [full documentation](https://github.com/reddpy/AgentGhost#readme).

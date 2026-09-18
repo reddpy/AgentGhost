@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/reddpy/agentghost/main/docs/agentghost_icon.png" alt="AgentGhost" width="76">
+  <img src="https://raw.githubusercontent.com/reddpy/AgentGhost/main/docs/agentghost_icon.png" alt="AgentGhost" width="76">
 </p>
 
 # @agentghost/vercel
@@ -53,4 +53,4 @@ Read-only tools can skip the judge entirely:
 guard(tools, { intent, allow: ["list_files", "read_file"] });
 ```
 
-See the [full documentation](https://github.com/reddpy/agentghost#readme).
+See the [full documentation](https://github.com/reddpy/AgentGhost#readme).

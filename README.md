@@ -1,5 +1,12 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/reddpy/agentghost/main/docs/agentghost_banner.png" alt="AgentGhost" width="720">
+  <img src="https://raw.githubusercontent.com/reddpy/AgentGhost/main/docs/agentghost_banner.png" alt="AgentGhost" width="720">
+</p>
+
+<p align="center">
+  <a href="https://github.com/reddpy/AgentGhost/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/reddpy/AgentGhost/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://www.npmjs.com/package/@agentghost/sdk"><img alt="npm" src="https://img.shields.io/npm/v/@agentghost/sdk.svg"></a>
+  <a href="./LICENSE"><img alt="license" src="https://img.shields.io/npm/l/@agentghost/sdk.svg"></a>
+  <img alt="node" src="https://img.shields.io/node/v/@agentghost/sdk.svg">
 </p>
 
 # AgentGhost

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/reddpy/agentghost/main/docs/agentghost_icon.png" alt="AgentGhost" width="76">
+  <img src="https://raw.githubusercontent.com/reddpy/AgentGhost/main/docs/agentghost_icon.png" alt="AgentGhost" width="76">
 </p>
 
 # @agentghost/langchain
@@ -46,4 +46,4 @@ Read-only tools can skip the judge entirely:
 guard(tools, { intent, allow: ["search", "read_file"] });
 ```
 
-See the [full documentation](https://github.com/reddpy/agentghost#readme).
+See the [full documentation](https://github.com/reddpy/AgentGhost#readme).

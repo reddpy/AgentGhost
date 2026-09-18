@@ -6,11 +6,11 @@
   "author": "AgentGhost contributors",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reddpy/agentghost.git"
+    "url": "git+https://github.com/reddpy/AgentGhost.git"
   },
-  "homepage": "https://github.com/reddpy/agentghost#readme",
+  "homepage": "https://github.com/reddpy/AgentGhost#readme",
   "bugs": {
-    "url": "https://github.com/reddpy/agentghost/issues"
+    "url": "https://github.com/reddpy/AgentGhost/issues"
   },
   "workspaces": [
     "packages/*"
@@ -18,6 +18,7 @@
   "scripts": {
     "build": "tsc -b && bun run --filter '*' build:cjs",
     "typecheck": "tsc -b",
+    "check:package": "bun run scripts/check-package.mjs",
     "clean": "tsc -b --clean && rm -rf packages/*/dist",
     "test": "bun test",
     "test:live": "AGENTGHOST_LIVE=1 bun test packages/sdk/test/gateway.live.test.ts",
@@ -34,12 +35,14 @@
     "@agentghost/openai": "workspace:*",
     "@agentghost/sdk": "workspace:*",
     "@agentghost/vercel": "workspace:*",
+    "@arethetypeswrong/cli": "^0.18.5",
     "@langchain/core": "^1.2.11",
     "@langchain/openai": "^1.5.13",
     "@types/node": "^22.10.0",
     "ai": "^7.0.106",
     "langchain": "^1.5.11",
     "openai": "^7.19.0",
+    "publint": "^0.3.24",
     "typescript": "^5.7.2",
     "zod": "^4.6.5"
   }

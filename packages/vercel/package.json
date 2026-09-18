@@ -10,12 +10,12 @@
   "author": "AgentGhost contributors",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reddpy/agentghost.git",
+    "url": "git+https://github.com/reddpy/AgentGhost.git",
     "directory": "packages/vercel"
   },
-  "homepage": "https://github.com/reddpy/agentghost#readme",
+  "homepage": "https://github.com/reddpy/AgentGhost#readme",
   "bugs": {
-    "url": "https://github.com/reddpy/agentghost/issues"
+    "url": "https://github.com/reddpy/AgentGhost/issues"
   },
   "sideEffects": false,
   "main": "./dist/cjs/index.js",
